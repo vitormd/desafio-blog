@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20151206174355) do
   create_table "posts", force: true do |t|
     t.string   "title",      null: false
     t.text     "message",    null: false
+    t.string   "slug",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

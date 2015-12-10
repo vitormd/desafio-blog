@@ -1,0 +1,9 @@
+<%= link_to "Novo Post", new_post_path %>
+<h2>Posts</h2>
+<%= @posts.each do |post| %>
+	<h3><%= link_to post.title, post, style:"text-decoration: none; color: black" %></h3>
+	<p><%= link_to post.message, post, style:"text-decoration: none; color: black" %></p>
+
+	<span><%= post.created_at %></span>
+	<hr>
+<% end %>
