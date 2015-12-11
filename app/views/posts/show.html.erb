@@ -1,5 +1,5 @@
 <%= link_to "Voltar", root_path %>
-<h2> <%= @post.title %></h2>
-<p> <%= @post.message %></p>
+<h2> <%= simple_format @post.title %></h2>
+<p> <%= simple_format @post.message %></p>
 <%= link_to "Deletar", post_path(@post), :method => :delete %>
 <%= link_to "Editar", edit_post_path(@post)%>
