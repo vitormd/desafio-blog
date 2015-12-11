@@ -1,28 +1,19 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<h1>Rails blog</h1><h2> running with postgresql option</h2>
 
-Things you may want to cover:
+<p>
+Blog simples, criado utilizando BDD através do Rspec.
 
-* Ruby version
+$ruby -v
+>2.2.1
 
-* System dependencies
+$rails --version
+>4.1.2
 
-* Configuration
+postgres 9.4
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Faça o '$git clone...' -> '$cd desafio-blog' e execute '$bundle install' ou '$bin/setup'
+Depois '$rake db:create db:migrate'
+Execute '$rspec' para rodar os testes
+</p>
