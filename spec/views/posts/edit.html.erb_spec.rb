@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature "When editing a post" do
   scenario "should update it" do
-    post = Post.create(title: 'title 1', message: 'message 1')
+    post = create_post
     
     visit edit_post_path(post)
 
@@ -20,7 +20,7 @@ feature "When editing a post" do
   end
 
   scenario "should validate title size" do
-    post = Post.create(title: 'title 1', message: 'message 1')
+    post = create_post
     
     visit edit_post_path(post)
 
@@ -32,5 +32,19 @@ Marc’s rules for PR, positioning, dealing with competitors and hiring are lege
     fill_in 'Title', with: 'This title will work this time. It is shorter'
 
     click_on 'Salvar'
+  end
+
+  scenario "should come back to post page" do
+    post = create_post
+
+    visit edit_post_path(post)
+
+    click_on 'Voltar'
+
+    expect(current_path).to eq post_path(post)
+  end
+
+  def create_post
+    post = Post.create(title: 'title 1', message: 'message 1')
   end
 end

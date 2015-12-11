@@ -56,4 +56,12 @@ And that’s how the fuck you well-regulate a goddamn American militia."
 
     expect(current_path).to eq "/posts/dear-america-here-s-your-gun-solution"
   end
+
+  scenario "should come back to root page" do
+    visit new_post_path
+
+    click_on 'Voltar'
+
+    expect(current_path).to eq root_path
+  end
 end

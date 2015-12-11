@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature "When viewing a post" do
   scenario "should be able to delete it" do
-    post = Post.create(title: 'title 1', message: 'message 1')
+    post = create_post
     visit post_path(post)
 
     click_on 'Deletar'
@@ -15,7 +15,7 @@ feature "When viewing a post" do
   end
 
   scenario "should be able to edit it" do
-    post = Post.create(title: 'title 1', message: 'message 1')
+    post = create_post
     visit post_path(post)
 
     click_on 'Editar'
@@ -25,5 +25,9 @@ feature "When viewing a post" do
     #por algum motivo have_content('title 1') nao funciona
     #mas eu sei por teste empirico que esta la
     expect(page).to have_content('message 1')
+  end
+
+  def create_post
+    post = Post.create(title: 'title 1', message: 'message 1')
   end
 end
