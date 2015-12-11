@@ -1,7 +1,4 @@
-== README
-
-#Rails blog running
-##with postgresql option
+#Rails blog running with postgresql
 
 Blog simples, criado utilizando BDD através do Rspec.
 
@@ -14,10 +11,10 @@ Blog simples, criado utilizando BDD através do Rspec.
 postgres 9.4
 
 ###Execute:
->$git clone https://github.com/vitormd/desafio-blog.git
->$cd desafio-blog
->$bundle install' ou '$bin/setup
->$rake db:create db:migrate
+>1. $git clone https://github.com/vitormd/desafio-blog.git
+2. $cd desafio-blog
+3. $bundle install' ou '$bin/setup
+4. $rake db:create db:migrate
 
 ###Para rodar os testes:
 >$rspec
