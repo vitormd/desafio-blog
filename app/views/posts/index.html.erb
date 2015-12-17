@@ -1,9 +1,19 @@
-<%= link_to "Novo Post", new_post_path %>
-<h2>Posts</h2>
-<%= @posts.each do |post| %>
-	<h3><%= link_to post.title, post, style:"text-decoration: none; color: black" %></h3>
-	<p><%= link_to post.message, post, style:"text-decoration: none; color: black" %></p>
+<nav>
+	<ul>
+		<li><%= link_to "Novo Post", new_post_path %></li>
+	</ul>
+</nav>
+<h2 class="page-title">Posts</h2>
 
-	<span><%= post.created_at %></span>
-	<hr>
+<%= @posts.each do |post| %>
+	<article class="post-container">
+		<h3 class="post-title"><a href="/posts/<%= post.slug%>">
+				<%= simple_format post.title %></a></h3>
+
+		<p><a href="/posts/<%= post.slug%>" class="post-message">
+				<%= simple_format post.message %></a></p>
+
+		<span class="post-date">
+			Criado em: <%= post.created_at %></span>
+	</article>
 <% end %>

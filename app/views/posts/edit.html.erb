@@ -1,10 +1,17 @@
-<%= link_to "Voltar", post_path(@post) %>
-<%= form_for @post, url: {action: :update}, method: :patch do |p| %>
-	<%= p.label :title %>
-	<%= p.text_field :title %>
+<nav>
+	<ul>
+		<li><%= link_to "Voltar", post_path(@post) %></li>
+	</ul>
+</nav>
 
-	<%= p.label :message %>
-	<%= p.text_area :message %>
+<h2 class="page-title">Editar Post</h2>
 
-	<%= p.submit 'Salvar' %>
+<%= form_for @post,  html:{class:'post-container'}, url: {action: :update}, method: :patch do |p| %>
+	<%= p.label :title, class:'form-label' %>
+	<%= p.text_field :title, class:'form-text-field' %>
+
+	<%= p.label :message, class:'form-label' %>
+	<%= p.text_area :message, class:'form-text-area' %>
+
+<%= p.submit 'Salvar', class:'btn' %>
 <% end %>

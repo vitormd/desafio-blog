@@ -1,10 +1,17 @@
-<%= link_to "Voltar", root_path %>
-<%= form_for @post do |p| %>
-	<%= p.label :title %>
-	<%= p.text_field :title %>
+<nav>
+	<ul>
+		<li><%= link_to "Voltar", root_path %></li>
+	</ul>
+</nav>
 
-	<%= p.label :message %>
-	<%= p.text_area :message %>
+<h2 class="page-title">Novo Post</h2>
 
-	<%= p.submit 'Create' %>
+<%= form_for @post, html:{class:'post-container'} do |p| %>
+	<%= p.label :title, class:'form-label' %>
+	<%= p.text_field :title, class:'form-text-field' %>
+
+	<%= p.label :message, class:'form-label' %>
+	<%= p.text_area :message, class:'form-text-area' %>
+
+	<%= p.submit 'Criar', class:'btn' %>
 <% end %>

@@ -6,7 +6,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+<header>
+	<h1><%= link_to "Vitor's Blog - Vlog", root_path, class: "logo" %></h1>
+</header>
 
 <%= yield %>
 

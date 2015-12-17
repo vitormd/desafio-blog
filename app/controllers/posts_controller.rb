@@ -7,7 +7,6 @@ class PostsController < ApplicationController
 
 	def index
 		@posts = Post.order(created_at: :desc)
-		return true
 	end
 
 	def new

@@ -19,7 +19,7 @@ And that’s how the fuck you well-regulate a goddamn American militia."
     fill_in 'Title', with: title
     fill_in 'Message', with: message
 
-    click_on 'Create'
+    click_on 'Criar'
 
     expect(page).to have_content(title)
     expect(page).to have_content(message)
@@ -30,7 +30,7 @@ And that’s how the fuck you well-regulate a goddamn American militia."
 
     fill_in 'Title', with: title
 
-    click_on 'Create'
+    click_on 'Criar'
     
     expect(page).to have_content('Title')
     
@@ -41,7 +41,7 @@ And that’s how the fuck you well-regulate a goddamn American militia."
 
     fill_in 'Message', with: message
 
-    click_on 'Create'
+    click_on 'Criar'
 
     expect(page).to have_content("Title")
   end
@@ -52,7 +52,7 @@ And that’s how the fuck you well-regulate a goddamn American militia."
     fill_in 'Title', with: title
     fill_in 'Message', with: message
 
-    click_on 'Create'
+    click_on 'Criar'
 
     expect(current_path).to eq "/posts/dear-america-here-s-your-gun-solution"
   end

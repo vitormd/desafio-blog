@@ -1,5 +1,13 @@
-<%= link_to "Voltar", root_path %>
-<h2> <%= simple_format @post.title %></h2>
-<p> <%= simple_format @post.message %></p>
-<%= link_to "Deletar", post_path(@post), :method => :delete %>
-<%= link_to "Editar", edit_post_path(@post)%>
+<nav>
+	<ul>
+		<li><%= link_to "Voltar", root_path %></li>
+		<li><%= link_to "Editar", edit_post_path(@post)%></li>
+		<li><%= link_to "Deletar", post_path(@post), :method => :delete %></li>
+	</ul>
+</nav>
+
+<h2 class="page-title"> <%= simple_format @post.title %></h2>
+<article class="post-container">
+	<p class="post-message"> <%= simple_format @post.message %></p>
+	<span class="post-date">Criado em:  <%= @post.created_at %></span>
+</article>
